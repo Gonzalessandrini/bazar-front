@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../hooks/useProducts";
-import { useSearch } from "../hooks/useSearch";
+
 
 
 export function SearchBox() {
 
 
-  const { search, updateSearch } = useSearch()
+  const [ search , setSearch ] = useState('')
   const { products, getProducts } = useProducts({search})
   const navigate = useNavigate()
    
@@ -35,7 +35,7 @@ export function SearchBox() {
             id="large-input"
             value={search}
             placeholder="Laptops, fragancias, smartphones..."
-            onChange={(e) => { updateSearch(e.target.value) }}
+            onChange={(e) => { setSearch(e.target.value) }}
             className="w-full px-6 py-4 bg-gray-900 text-gray-100 rounded-full focus:outline-none"
           />
           <button
@@ -46,7 +46,6 @@ export function SearchBox() {
           </button>
         </section>
       </form>
-      <button onClick={()=> console.log(useProducts)}>asd</button>
     </div>
   );
 }

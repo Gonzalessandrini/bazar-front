@@ -1,20 +1,18 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect} from 'react';
 import productService from '../services/items'
 
-export function useProducts ({search}) {
+export function useProducts () {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const previousSearch= useRef(search)
 
-  const getProducts= useCallback(async ({ search }) => {
-    if (search === previousSearch.current) return
-    // search es ''
+
+  const getProducts= async ({ search }) => {
 
     try {
       setLoading(true)
       setError(null)
-      previousSearch.current = search
+
       const newProducts = await productService.getProducts({ search })
       console.log(newProducts)
       setProducts(newProducts)
@@ -24,7 +22,7 @@ export function useProducts ({search}) {
 
       setLoading(false)
     }
-  }, [])
+  }
 
   useEffect(() => {
     console.log(products)
