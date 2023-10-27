@@ -1,0 +1,79 @@
+.detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #fff; /* Cambia el color de fondo según tus preferencias */
+    border: 1px solid #ccc; /* Añade un borde opcional */
+    border-radius: 8px; /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar el contenedor */
+    margin-top: 120px;
+}
+.left-col {
+    flex: 1;
+}
+
+.item {
+    margin-top: 20px;
+    width: 90px;
+    border-radius: 20px;
+    border: 1px solid rgb(0, 0, 12)
+}
+.main-image {
+    width: 670px;
+}
+.main-image img {
+    margin-left: 25px;
+    margin-top: 20px;
+    border-radius: 80px;
+    width: 590px;
+}
+
+.right-col {
+    flex: 1;
+}
+
+/* Agrega estos estilos a tu archivo CSS (productDetail.css) */
+
+/* Estilo para la descripción */
+.pt-4 p {
+    text-align: justify; /* Justificar el texto para un aspecto más limpio */
+    line-height: 1.5; /* Aumenta el espaciado entre líneas para una mejor legibilidad */
+}
+
+/* Estilo para las imágenes alternativas */
+.alt-images ul {
+    width: 180px;
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.alt-images li {
+    flex: 0 0 calc(33.33% - 10px); /* Para crear un diseño de cuadrícula flexible */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.alt-images img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo para el título del producto */
+.title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+h1 span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Estilo para la calificación de estrellas */
+.flex-row .product-rating {
+    font-size: 1rem;
+}
+

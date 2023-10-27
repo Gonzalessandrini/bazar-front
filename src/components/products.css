@@ -1,0 +1,57 @@
+.products {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 125px;
+  }
+  
+  .products ul {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        200px,
+        1fr
+      )
+    );
+    gap: 1rem;
+  }
+  
+  .products li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    background: #131921;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  .products h3 {
+    margin: 0;
+  }
+  
+  .products img {
+    border-radius: 4px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    object-fit: cover;
+    background: #fff;
+  }
+
+.products p {
+  padding-top: 5px;
+}
+.link {
+  color: inherit;
+  text-decoration: inherit;
+  transition: color 0.2s; 
+}
+
+.link :hover {
+  color: #0077FF;
+}
