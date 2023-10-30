@@ -1,19 +1,24 @@
 import { Link } from 'react-router-dom'
-
+import { useProducts } from '../hooks/useProducts'
 import { Nav } from './Nav'
 import './products.css'
 
 export function Products(){
 
-    const  products  = []
+    const {products, loading} = useProducts()
 
     return (
 
     <>
 
         <Nav/>
-    
-        <main className='products'>
+
+        {
+            loading
+
+            ? (<div>Cargando</div>)
+            : (<main className='products'>
+
 
             <ul>
                 {products.map(product=>(
@@ -42,7 +47,10 @@ export function Products(){
                 ))}
                 
             </ul>
-        </main>
+        </main>)
+        }
+    
+        
     </>
         
     )

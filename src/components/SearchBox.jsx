@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../hooks/useProducts";
 
@@ -8,18 +8,15 @@ export function SearchBox() {
 
 
   const [ search , setSearch ] = useState('')
-  const { products, getProducts } = useProducts({search})
+  const { getProducts } = useProducts({search})
   const navigate = useNavigate()
    
   const handleSubmit = async (e) => {
     e.preventDefault();
-    getProducts({search})
+    const products = await getProducts({search})
+    console.log(products)
      navigate('/products');
   };
-
-  useEffect(() => {
-    console.log(products)
-  }, [products]);
 
   return (
     <div className="bg-gray-800 min-h-screen flex flex-col items-center justify-center text-white">
